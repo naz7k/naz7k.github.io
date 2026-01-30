@@ -1,31 +1,126 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <title>Web</title>
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="style.css">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="robots" content="index,follow">
-  <meta name="generator" content="GrapesJS Studio">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <style>
+        /* --- General Reset & Fonts --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #121212; /* Dark background for contrast */
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh; /* Full viewport height */
+        }
+
+        /* --- Header Styling --- */
+        h1 {
+            font-weight: 300; /* Thin, elegant font weight */
+            letter-spacing: 2px;
+            margin-bottom: 50px; /* Space between title and squares */
+            text-transform: uppercase;
+            font-size: 2rem;
+        }
+
+        /* --- Container for the Squares --- */
+        .grid-container {
+            display: flex;
+            gap: 20px; /* Minimal spacing between squares */
+            flex-wrap: wrap; /* Allows stacking on very small screens */
+            justify-content: center;
+        }
+
+        /* --- The Square Buttons --- */
+        .project-card {
+            position: relative;
+            width: 300px;  /* Decently big */
+            height: 300px; /* Square ratio */
+            border-radius: 8px; /* Slight rounding for modern feel */
+            overflow: hidden;
+            text-decoration: none; /* Removes underline from links */
+            transition: all 0.3s ease; /* Smooth animation */
+            
+            /* Initial subtle border/shadow */
+            border: 1px solid #333;
+        }
+
+        /* --- The Image inside the Square --- */
+        .project-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures image covers the square without stretching */
+            filter: brightness(0.6); /* Darkens image so text pops */
+            transition: filter 0.3s ease;
+        }
+
+        /* --- The Text Overlay --- */
+        .card-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); /* Perfectly centers text */
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-align: center;
+            z-index: 2;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.8); /* Ensures text is readable */
+        }
+
+        /* --- Hover Effects (The Glow) --- */
+        .project-card:hover {
+            transform: translateY(-5px); /* Moves up slightly */
+            /* This is the glow effect */
+            box-shadow: 0 0 25px rgba(100, 200, 255, 0.6), 
+                        0 0 10px rgba(100, 200, 255, 0.4); 
+            border-color: rgba(100, 200, 255, 0.8);
+        }
+
+        .project-card:hover img {
+            filter: brightness(0.8); /* Brightens image slightly on hover */
+        }
+
+        /* --- Simple Responsive Tweak --- */
+        @media (max-width: 950px) {
+            .grid-container {
+                flex-direction: column; /* Stacks vertically on tablets/phones */
+            }
+        }
+    </style>
 </head>
+<body>
 
-<body id="i6wl">
-  <header class="head">
-    <div id="i4e37">Nazar Kolyasa</div>
-  </header>
-  <div class="card" id="iy8i">
-    <h1 class="title" id="if9q">My Projects</h1>
-    <p class="paragraph" id="iuul4">UTM Student's Union Recommendations for Transit - UTMSU Lobby Week<br/><a
-        href="https://app.grapesjs.com/docs-sdk/configuration/projects#self-hosted-storage" target="_blank" id="i1ppk"
-        class="link">https://utmsu.ca/wp-content/uploads/2025/04/Lobby-Week-Transit-2025.pdf</a></p>
-    <p class="paragraph" id="ip168">Draft Plan of Subdivision - 43 Duke of York Blvd, Mississauga, ON<br/><a
-        href="https://app.grapesjs.com/docs-sdk/configuration/projects#self-hosted-storage" target="_blank" id="i1ppk-3"
-        class="link">https://drive.google.com/file/d/1C_PgygPlppiT5unQaBa6aO4Q0pFKgS-Q/view?usp=sharing</a></p>
-    <p class="paragraph" id="is67r">DocuDraft<br/><a
-        href="https://app.grapesjs.com/docs-sdk/configuration/projects#self-hosted-storage" target="_blank" id="i1ppk-2"
-        class="link">https://github.com/naz7k/DocuDraft-Redux</a></p>
-  </div>
+    <h1>John Doe Portfolio</h1>
+
+    <div class="grid-container">
+
+        <a href="https://google.com" class="project-card">
+            <img src="https://picsum.photos/id/1015/600/600" alt="Landscape">
+            <span class="card-text">PHOTOGRAPHY</span>
+        </a>
+
+        <a href="#" class="project-card">
+            <img src="https://picsum.photos/id/1078/600/600" alt="Architecture">
+            <span class="card-text">ARCHITECTURE</span>
+        </a>
+
+        <a href="#" class="project-card">
+            <img src="https://picsum.photos/id/1016/600/600" alt="Coding">
+            <span class="card-text">WEB DESIGN</span>
+        </a>
+
+    </div>
+
 </body>
-
 </html>
