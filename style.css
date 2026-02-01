@@ -23,6 +23,12 @@ body {
     color: var(--text-primary);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
+	
+	background-image: url('background.svg'); 
+    background-size: 100% auto;          /* Stretches image to fill the screen */
+    background-repeat: no-repeat;    /* Prevents tiling */
+    background-position: top -80px right;     /* Centers the image */
+    background-attachment: scroll;    /* Keeps the background still while you scroll */
 }
 
 a {
@@ -50,6 +56,7 @@ img {
 /* --- Header --- */
 header {
     padding: 40px 0;
+	background-color: #C2C2C2;
 }
 
 header .container {
@@ -91,7 +98,7 @@ header .container {
 
 /* --- Hero Section --- */
 .hero {
-    padding: 100px 0 80px;
+    padding: 140px 0 30px;
 }
 
 .hero h1 {
@@ -115,7 +122,7 @@ header .container {
 
 /* --- Projects Section --- */
 .projects {
-    padding: 60px 0 100px;
+    padding: 80px 0 100px;
 }
 
 .section-title {
@@ -157,6 +164,7 @@ header .container {
 
 .project-content {
     padding: 25px;
+	line-height: 1.7
 }
 
 .project-content h3 {
