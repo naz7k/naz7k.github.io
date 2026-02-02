@@ -3,7 +3,8 @@
     --bg-color: #ffffff;
     --card-bg: #f9f9f9;
     --text-primary: #1a1a1a;
-    --text-secondary: #666666;
+    --text-secondary: #292929;
+	--text-highlight: #777777;
     --accent: #2d2d2d; /* Dark grey for a minimal look */
     --border-color: #e5e5e5;
     --spacing: 20px;
@@ -18,18 +19,47 @@
 }
 
 body {
+	position: relative;
+	
     font-family: var(--font-main);
     background-color: var(--bg-color);
     color: var(--text-primary);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
 	
-	background-image: url('background.svg'); 
-    background-size: 100% auto;          /* Stretches image to fill the screen */
-    background-repeat: no-repeat;    /* Prevents tiling */
-    background-position: top -80px right;     /* Centers the image */
-    background-attachment: scroll;    /* Keeps the background still while you scroll */
+	
+	background-image: url('./assets/background.svg');
+	background-size: calc(var(--max-width) * 3.7) auto;          
+	background-repeat: no-repeat;   
+	background-attachment: local;
+	background-position: top -45px center;
+	
 }
+/*
+#about {
+	position: relative;
+	z-index: 1; 
+}
+
+#about::before {
+	content: "";
+	position: absolute;
+	top: -30%;
+	bottom: -1000px;
+	left: 0;
+	width: 100%;
+	height: inherit;
+	background-image: url('./assets/background.svg');
+	background-size: var(--max-width)2 auto;          
+	background-repeat: no-repeat;   
+	background-position: top center;
+	z-index: -1;
+}
+
+#work {
+	position: relative;
+	z-index: 1
+}*/
 
 a {
     text-decoration: none;
@@ -110,7 +140,7 @@ header .container {
 }
 
 .hero .highlight {
-    color: var(--text-secondary); /* Makes name slightly softer or add color here */
+    color: var(--text-highlight); /* Makes name slightly softer or add color here */
 }
 
 .subtitle {
@@ -157,14 +187,13 @@ header .container {
 
 .project-image img {
     width: 100%;
-    height: 200px;
+    height: 250px;
     object-fit: cover;
     border-bottom: 1px solid var(--border-color);
 }
 
 .project-content {
     padding: 25px;
-	line-height: 1.7
 }
 
 .project-content h3 {
@@ -172,9 +201,14 @@ header .container {
     font-size: 1.1rem;
 }
 
+.project-content h4 {
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+}
+
 .project-content p {
     color: var(--text-secondary);
-    font-size: 0.95rem;
+    font-size: 0.90rem;
     margin-bottom: 20px;
 }
 
